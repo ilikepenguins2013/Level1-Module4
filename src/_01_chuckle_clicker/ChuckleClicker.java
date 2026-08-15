@@ -4,30 +4,16 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
-import javax.swing.JOptionPane;
 
-public class ChuckleClicker {
-
-	public static void main(String[] args) {
-		makeButtons();
-	}
-	
-	public static void makeButtons() {
-		JFrame frame = new JFrame();
-		JPanel panel = new JPanel();
-		JButton button1 = new JButton();
-		JButton button2 = new JButton();
+public class ChuckleClicker implements ActionListener {
+	JFrame frame = new JFrame();
+	JPanel panel = new JPanel();
+	JButton button1 = new JButton();
+	JButton button2 = new JButton();
+	 void makeButtons() {
 		button1.setText("joke");
-		button2.setText("joke");
-		button1.addActionListener(new ActionListener(){public void actionPerformed(ActionEvent e) {
-			joke(""};
-		
-
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			// TODO Auto-generated method stub
-			
-		}});
+		button2.setText("punchline");
+		button1.addActionListener(this);
 		button2.addActionListener(this);
 		panel.add(button1);
 		panel.add(button2);
@@ -36,5 +22,15 @@ public class ChuckleClicker {
 		frame.pack();
 
 	}
+	 
+	 @Override
+		public void actionPerformed(ActionEvent e) {
+			if(e.getSource() == button1) {
+				JOptionPane.showMessageDialog(null, "I told my doctor that I broke my arm in two places,");
+			}
+			else if(e.getSource() == button2) {
+				JOptionPane.showMessageDialog(null, "He told me not to go to those places.");
+			}
+		}
 
 }
