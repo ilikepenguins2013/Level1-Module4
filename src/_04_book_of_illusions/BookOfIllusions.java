@@ -48,7 +48,7 @@ public class BookOfIllusions extends MouseAdapter {
 		// 11. Print "clicked!" to the console when the mouse is pressed
 		System.out.println("Clicked!");
 		// 12. remove everything from the frame that was added earlier
-		frame.removeAll();
+		frame.getContentPane().removeAll();
 		// 13. load a new image like before (this is more than one line of code)
 		label = loadImageFromComputer(illusion2);
 		frame.add(label);
