@@ -1,6 +1,8 @@
 package _07_tv_show_episode_info;
 
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -8,12 +10,20 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 
+import javax.swing.*;
 import javax.swing.JOptionPane;
 
-public class TVShowEpisodeInfoDisplayer {
-	
+public class TVShowEpisodeInfoDisplayer implements ActionListener{
+	JFrame frame;
+	JTextField field;
+	JButton button;
 	public TVShowEpisodeInfoDisplayer() {
-		
+		frame = new JFrame();
+		field = new JTextField();
+		button = new JButton();
+		frame.add(field);
+		frame.add(button);
+		frame.pack();
 	}
 
 	
@@ -74,4 +84,14 @@ public class TVShowEpisodeInfoDisplayer {
 		
 		return res;
 	}
+
+
+
+
+
+@Override
+public void actionPerformed(ActionEvent e) {
+	// TODO Auto-generated method stub
+	
+}
 }
